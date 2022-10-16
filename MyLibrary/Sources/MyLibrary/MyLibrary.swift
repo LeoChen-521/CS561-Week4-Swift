@@ -1,6 +1,6 @@
 public class MyLibrary {
     private let weatherService: WeatherService
-
+    
     /// The class's initializer.
     ///
     /// Whenever we call the `MyLibrary()` constructor to instantiate a `MyLibrary` instance,
@@ -8,7 +8,7 @@ public class MyLibrary {
     public init(weatherService: WeatherService? = nil) {
         self.weatherService = weatherService ?? WeatherServiceImpl()
     }
-
+    
     public func isLucky(_ number: Int) async -> Bool? {
         // Check the simple case first: 3, 5 and 8 are automatically lucky.
         if number == 3 || number == 5 || number == 8 {

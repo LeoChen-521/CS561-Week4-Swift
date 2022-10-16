@@ -1,11 +1,20 @@
 import Alamofire
+import Foundation
+
 
 public protocol WeatherService {
     func getTemperature() async throws -> Int
 }
 
+enum BaseUrl :String {
+    case production = "https://api.openweathermap.org/data/2.5/weather?q=corvallis&units=imperial&appid=f714c6c950beba3a9c729d6017b5f4a6"
+    case mockServer = "http://localhost:3000/data/2.5/weather"
+}
+
 class WeatherServiceImpl: WeatherService {
-    let url = "https://api.openweathermap.org/data/2.5/weather?q=corvallis&units=imperial&appid=<INSERT YOUR API KEY HERE>"
+    
+    let url = BaseUrl.production.rawValue
+    //let url = BaseUrl.mockServer.rawValue
 
     func getTemperature() async throws -> Int {
         return try await withCheckedThrowingContinuation { continuation in
@@ -24,7 +33,7 @@ class WeatherServiceImpl: WeatherService {
     }
 }
 
-private struct Weather: Decodable {
+public struct Weather: Decodable {
     let main: Main
 
     struct Main: Decodable {
