@@ -21,6 +21,7 @@ jobs:
       working-directory: ./mock-weather-server
       run: node app.js&
     - name: Build
+      working-directory: ./MyLibrary
       run: swift build -v
     - name: Run tests
       working-directory: ./MyLibrary
