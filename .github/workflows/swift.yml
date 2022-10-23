@@ -4,8 +4,8 @@
 name: Swift
 
 on:
-  # push:
-  #   branches: [ "xiaoru/actions" ]
+  push:
+    branches: [ "xiaoru/actions" ]
   pull_request:
     branches: [ "xiaoru/actions" ]
 
