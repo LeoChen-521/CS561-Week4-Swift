@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Checkout branch
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
     - name: Turn on mock-server
       working-directory: ./mock-weather-server
       run: node app.js&
