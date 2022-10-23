@@ -13,8 +13,8 @@ enum BaseUrl :String {
 
 class WeatherServiceImpl: WeatherService {
     
-    let url = BaseUrl.production.rawValue
-    //let url = BaseUrl.mockServer.rawValue
+    //let url = BaseUrl.production.rawValue
+    let url = BaseUrl.mockServer.rawValue
 
     func getTemperature() async throws -> Int {
         return try await withCheckedThrowingContinuation { continuation in

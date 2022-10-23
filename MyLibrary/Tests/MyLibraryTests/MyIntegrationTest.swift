@@ -20,10 +20,10 @@ final class MyIntegrationTest: XCTestCase {
         // Check the temperature is what you expect
         
         // Production Server
-        XCTAssertEqual(temp, 62)
+        // XCTAssertEqual(temp, 62)
         
         // Mock Server
-        // XCTAssertEqual(temp, 281)
+        XCTAssertEqual(temp, 281)
         
         
     }
