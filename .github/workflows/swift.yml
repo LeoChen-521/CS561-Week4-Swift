@@ -1,0 +1,29 @@
+# This workflow will build a Swift project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+
+name: Swift
+
+on:
+  push:
+    branches: [ "xiaoru/actions" ]
+  pull_request:
+    branches: [ "xiaoru/actions" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v3
+    - name: Turn on mock-server
+      working-directory: ./mock-weather-server
+      run: node app.js&
+    - name: Build
+      working-directory: ./MyLibrary
+      run: swift build -v
+    - name: Run tests
+      working-directory: ./MyLibrary
+      run: swift test -v
+
