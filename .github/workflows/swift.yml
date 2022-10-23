@@ -5,7 +5,7 @@ name: Swift
 
 on:
   # push:
-  #   branches: [ "xiaoru/action" ]
+  #   branches: [ "xiaoru/actions" ]
   pull_request:
     branches: [ "xiaoru/actions" ]
 
